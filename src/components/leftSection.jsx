@@ -1,24 +1,44 @@
 import React from "react";
-import { IoRainy } from "react-icons/io5";
 
-const LeftSection = () => {
+import defaultIcon from "../assets/icons/default.svg";
+import { displayDate, displayIcon } from "../utils";
+
+const LeftSection = ({ weather }) => {
   return (
     <div className="flex flex-col justify-between p-20">
       <h1 className="font-michroma text-lg font-bold tracking-wider">
         the.weather
       </h1>
-      
-      <div className="flex gap-4 items-end">
-        <h2 className="text-9xl">18°</h2>
-        <div>
-          <h2 className="text-6xl font-bold">London</h2>
-          <p className="text-2xl">06:09 - Sunday, 6 Oct 19</p>
+
+      {weather ? (
+        <div className="flex gap-4 items-end">
+          <h2 className="text-9xl">
+            {Math.round(weather ? weather.main?.temp : "00")}°
+          </h2>
+          <div>
+            <h2 className="text-6xl font-bold">
+              {weather ? weather.name : "London"}
+            </h2>
+            <p className="text-2xl">{displayDate()}</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              className="icon"
+              src={
+                weather.weather[0]
+                  ? displayIcon(weather.weather[0].id)
+                  : defaultIcon
+              }
+              alt="Weather Icon"
+            />
+            <p className="text-xl">
+              {weather.weather[0] ? weather.weather[0].main : "-"}
+            </p>
+          </div>
         </div>
-        <div className="flex flex-col items-center">
-          <IoRainy size={80} />
-          <p className="text-xl">Rainy</p>
-        </div>
-      </div>
+      ) : (
+        <div className="text-4xl">Loading...</div>
+      )}
     </div>
   );
 };
