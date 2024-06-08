@@ -5,7 +5,12 @@ export default {
     "./index.html",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        michroma: ['Michroma', 'sans-serif'],
+        syne: ['Syne', 'sans-serif']
+      }
+    },
   },
   plugins: [],
 }
