@@ -2,6 +2,12 @@
 
 This repository contains a Weather App built with React and Vite. The app allows users to fetch and display weather information for their current location or a specified city using the OpenWeather API. 
 
+![Weather App Screenshot](src/assets/images/weather-app.jpg)
+
+## Live Preview
+
+Check out the live preview of the app [https://weather-app-utkarsh.vercel.app](https://weather-app-utkarsh.vercel.app/)
+
 ## Table of Contents
 - [Getting Started](#getting-started)
 - [Technologies Used](#technologies-used)
