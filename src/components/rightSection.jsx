@@ -42,19 +42,19 @@ const RightSection = ({ weather, searchWeather }) => {
           <p className="flex justify-between items-center text-lg text-gray-400">
             Cloudy{" "}
             <span className="text-2xl text-gray-200">
-              {weather ? weather.clouds.all : "86"}%
+              {weather && weather.clouds ? weather.clouds.all : "86"}%
             </span>
           </p>
           <p className="flex justify-between items-center text-lg text-gray-400">
             Humidity{" "}
             <span className="text-2xl text-gray-200">
-              {weather ? weather.main.humidity : "62"}%
+              {weather && weather.main ? weather.main.humidity : "62"}%
             </span>
           </p>
           <p className="flex justify-between items-center text-lg text-gray-400">
             Wind{" "}
             <span className="text-2xl text-gray-200">
-              {weather ? weather.wind.speed : "8"} km/h
+              {weather && weather.wind ? weather.wind.speed : "8"} km/h
             </span>
           </p>
           <p className="flex justify-between items-center text-lg text-gray-400">

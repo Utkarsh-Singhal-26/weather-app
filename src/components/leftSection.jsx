@@ -25,14 +25,14 @@ const LeftSection = ({ weather }) => {
             <img
               className="icon"
               src={
-                weather.weather[0]
+                weather && weather.weather
                   ? displayIcon(weather.weather[0].id)
                   : defaultIcon
               }
               alt="Weather Icon"
             />
             <p className="text-xl">
-              {weather.weather[0] ? weather.weather[0].main : "-"}
+              {weather && weather.weather ? weather.weather[0].main : "-"}
             </p>
           </div>
         </div>
