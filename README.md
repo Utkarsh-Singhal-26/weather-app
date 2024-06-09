@@ -20,7 +20,7 @@ To run this application locally, follow these steps:
 
 1. **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/weather-app.git](https://github.com/Utkarsh-Singhal-26/weather-app)
+    git clone https://github.com/Utkarsh-Singhal-26/weather-app.git
     cd weather-app
     ```
 
@@ -32,7 +32,7 @@ To run this application locally, follow these steps:
 3. **Set up environment variables:**
     Create a `.env` file in the root of the project and add your OpenWeather API key:
     ```bash
-    VITE_OPENWEATHER_API_KEY=your_api_key_here
+    VITE_WEATHER_API=api_key
     ```
 
 4. **Run the application:**
