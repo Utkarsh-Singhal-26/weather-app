@@ -61,7 +61,7 @@ const App = () => {
 
   return (
     <main
-      className="w-screen h-screen m-0 p-0 font-syne text-white grid grid-cols-[1fr_30%] bg-cover bg-center bg-fixed bg-no-repeat"
+      className="w-screen h-screen m-0 p-0 font-syne text-white grid max-md:grid-rows-[40%_1fr] md:grid-cols-[1fr_30%] bg-cover bg-center bg-fixed bg-no-repeat"
       style={{
         backgroundImage: `url(${
           weather && weather.weather

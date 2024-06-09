@@ -27,39 +27,39 @@ const RightSection = ({ weather, searchWeather }) => {
           onChange={handleChange}
           onKeyDown={handleEnter}
           placeholder="enter city name"
-          className="bg-transparent w-[80%] h-[48px] text-lg border-b focus:outline-none"
+          className="bg-transparent md:w-[60%] lg:w-[80%] h-[48px] text-lg border-b focus:outline-none"
           autoComplete="off"
         />
 
-        <h3 className="text-2xl tracking-wider">
+        <h3 className="md:text-lg lg:text-2xl tracking-wider">
           Weather Details:{" "}
           <span className="text-gray-400 font-bold font-michroma">
             {weather ? weather.name : "London"}
           </span>
         </h3>
 
-        <div className="flex flex-col gap-2">
-          <p className="flex justify-between items-center text-lg text-gray-400">
+        <div className="flex flex-col gap-2 lg:text-lg text-gray-400">
+          <p className="flex justify-between items-center">
             Cloudy{" "}
-            <span className="text-2xl text-gray-200">
+            <span className="lg:text-2xl text-gray-200">
               {weather && weather.clouds ? weather.clouds.all : "86"}%
             </span>
           </p>
           <p className="flex justify-between items-center text-lg text-gray-400">
             Humidity{" "}
-            <span className="text-2xl text-gray-200">
+            <span className="lg:text-2xl text-gray-200">
               {weather && weather.main ? weather.main.humidity : "62"}%
             </span>
           </p>
           <p className="flex justify-between items-center text-lg text-gray-400">
             Wind{" "}
-            <span className="text-2xl text-gray-200">
+            <span className="lg:text-2xl text-gray-200">
               {weather && weather.wind ? weather.wind.speed : "8"} km/h
             </span>
           </p>
           <p className="flex justify-between items-center text-lg text-gray-400">
             Rain{" "}
-            <span className="text-2xl text-gray-200">
+            <span className="lg:text-2xl text-gray-200">
               {weather ? checkRain(weather) : "8"} mm
             </span>
           </p>
