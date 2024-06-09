@@ -64,9 +64,11 @@ export function displayDate() {
   ];
 
   let date = new Date();
-  return `${date.getHours()}:${date.getMinutes()} - ${
-    days[date.getDay()]
-  }, ${date.getDay()} ${months[date.getMonth()]} ${date
+  return `${String(date.getHours()).padStart(2, "0")}:${String(
+    date.getMinutes()
+  ).padStart(2, "0")} - ${days[date.getDay()]}, ${String(
+    date.getDate()
+  ).padStart(2, "0")} ${months[date.getMonth()]} ${date
     .getFullYear()
     .toString()
     .slice(-2)}`;

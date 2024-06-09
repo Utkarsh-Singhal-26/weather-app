@@ -13,7 +13,7 @@ const LeftSection = ({ weather }) => {
       {weather ? (
         <div className="flex gap-4 items-end">
           <h2 className="text-9xl">
-            {Math.round(weather ? weather.main?.temp : "00")}°
+            {Math.round(weather?.main?.temp ?? "00")}°
           </h2>
           <div>
             <h2 className="text-6xl font-bold">

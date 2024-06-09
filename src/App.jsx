@@ -11,11 +11,39 @@ const App = () => {
   const [weather, setWeather] = useState({});
 
   useEffect(() => {
-    async function getData() {
-      await searchWeather("London");
-    }
-    getData();
+    const getLocation = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            fetchLocationName(latitude, longitude);
+          },
+          (error) => {
+            console.error("Error getting location:", error);
+          }
+        );
+      } else {
+        console.error("Geolocation is not supported by this browser.");
+      }
+    };
+
+    getLocation();
   }, []);
+
+  const fetchLocationName = async (latitude, longitude) => {
+    const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const {
+        address: { state },
+      } = data;
+      searchWeather(state);
+    } catch (error) {
+      console.error("Error fetching location name:", error);
+    }
+  };
 
   const searchWeather = async (city) => {
     const api_key = import.meta.env.VITE_WEATHER_API;
